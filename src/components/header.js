@@ -9,7 +9,12 @@ import Image from "./image"
 
 const Header = ({ siteTitle }) => {
   
-  const [isLarge, setIsLarge] = useState("hi");
+  const [isLarge, setIsLarge] = useState(true);
+  const [isNavOpen, setIsNavOpen] = useState(false);
+
+  const toggleNav = (event) => {
+    setIsNavOpen(!isNavOpen);
+  }
 
   console.log(isLarge)
 
@@ -20,7 +25,7 @@ const Header = ({ siteTitle }) => {
       const headerImg = document.querySelector('.header-image')
       const pageTitle = document.querySelector('.page-title')
 
-      if (document.body.scrollTop > 48 || document.documentElement.scrollTop > 48) {
+      if ((document.body.scrollTop > 48 || document.documentElement.scrollTop > 48) && window.innerWidth > 840) {
         header.style.height = "3rem";
         navButtons.forEach((elt) => {elt.style.height = "3rem"})
         headerImg.style.width = "2rem";
@@ -40,6 +45,7 @@ const Header = ({ siteTitle }) => {
   })
   
   return (
+    <>
     <header
         style={{
           background: `rgba(203, 214, 224,80)`,
@@ -55,19 +61,14 @@ const Header = ({ siteTitle }) => {
         <h1 className = "page-title" style = {{margin: `0px`, position: `relative`, top: `-.25rem`, display: `inline-block`}}>
           <Link
             to="/"
-            style={{
-              color: `black`,
-              textDecoration: `none`,
-              fontSize: `2rem`,
-              lineHeight: `2rem`
-            }}
+            className = "header-title"
           >
-            {isLarge ? (<span>Raleigh <br></br>Roundnet</span>):(<span>Raleigh Roundnet</span>) }
+            {isLarge ? (<span>Raleigh <br className = "break"></br>Roundnet</span>):(<span>Raleigh Roundnet</span>) }
 
           </Link>
         </h1>
       </div>
-      <div style = {{display: `inline-block`, float: `right`}}>
+      <nav id = "largeNav" >
         <Link to = "/" className = "nav-button">
             <span className = "nav-text">
               Home
@@ -88,10 +89,21 @@ const Header = ({ siteTitle }) => {
               Contact Us
             </span>
         </Link>
-      </div>
+      </nav>
+      <nav id = "smallNav">
+        <span className = "hamburger" onClick = {toggleNav}>
+            ☰ 
+        </span>
+      </nav>
       </div>
     </header>
-  
+    {isNavOpen ? 
+            <div className = "drop-down">
+                <Link to = {'/events'} className = "dd-item" style = {{textDecoration:"none", top: "6rem"}} onClick = {toggleNav}>Events</Link>
+                <Link to = {'/about'} className = "dd-item" style = {{textDecoration:"none", top: "9rem"}} onClick = {toggleNav}>About</Link>
+                <Link to = {'/contact'} className = "dd-item" style = {{textDecoration:"none", top: "12rem"}} onClick = {toggleNav}>Contact Us</Link>
+            </div> : null}
+    </>
   )
 }
 
