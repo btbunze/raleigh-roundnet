@@ -40,7 +40,7 @@ const EventsPage = () => (
       </div>
     </div>
     
-    <div style = {{width:"100vw", height: "2rem", backgroundColor: "#CBD6E0"}}></div>
+    <div style = {{width:"100%", height: "2rem", backgroundColor: "#CBD6E0"}}></div>
 
     <div className = "section">
       <div className = "content" style = {{paddingTop: "3rem"}}>

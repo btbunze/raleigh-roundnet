@@ -316,6 +316,7 @@ footer{
 
 .column{
     padding:1.5rem;
+    max-width:512px;
     position:relative;
 }
 
@@ -339,6 +340,25 @@ footer{
     .break{
         margin-bottom: 0rem;
         height:0px;
+    }
+
+
+    .grid-item-sm{
+        display:none;
+    }
+
+    .grid-item-lg{
+        grid-column: span 3;
+    }
+
+    .two-column{
+        display:grid;
+        grid-template-columns: 1fr;
+        grid-template-rows:1fr 1fr; 
+    }
+
+    .swap-order-on-mobile{
+        order: -1;
     }
 
   }

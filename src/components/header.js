@@ -3,7 +3,7 @@ import PropTypes from "prop-types"
 import React,{useState, useEffect} from "react"
 
 
-import "./index.css"
+import "../index.css"
 
 import Image from "./image"
 
@@ -101,7 +101,7 @@ const Header = ({ siteTitle }) => {
             <div className = "drop-down">
                 <Link to = {'/events'} className = "dd-item" style = {{textDecoration:"none", top: "6rem"}} onClick = {toggleNav}>Events</Link>
                 <Link to = {'/about'} className = "dd-item" style = {{textDecoration:"none", top: "9rem"}} onClick = {toggleNav}>About</Link>
-                <Link to = {'/contact'} className = "dd-item" style = {{textDecoration:"none", top: "12rem"}} onClick = {toggleNav}>Contact Us</Link>
+                <Link to = {'/contact-us'} className = "dd-item" style = {{textDecoration:"none", top: "12rem"}} onClick = {toggleNav}>Contact Us</Link>
             </div> : null}
     </>
   )
