@@ -8,7 +8,7 @@
 </h1>
 
 Raleigh Roundnet website for displaying information about the club and tournaments
-FInd the site at [raleigh-roundnet.herokuapp.com]:https://raleigh-roundnet.herokuapp.com
+FInd the site at [raleigh-roundnet.herokuapp.com](https://raleigh-roundnet.herokuapp.com)
 
 ## How to Set Up the Local Environment
 
