@@ -377,7 +377,6 @@ footer{
     #smallNav{
       display:inline-flex;
       padding-top:1rem;
-      float:right;
     }
 
     .header-title{

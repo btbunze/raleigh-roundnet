@@ -55,7 +55,7 @@ const Header = ({ siteTitle }) => {
           
         }}
       >
-      <div className = "content">
+      <div className = "content" style = {{display:'flex', justifyContent: 'space-Between'}}>
       <div style = {{display:`inline-block`}}>
         <div className = "header-image" style = {{width: `4rem`, margin: `1rem`, display: `inline-block`}} >
           <Image fileName = "LogoACFS.png"/>
