@@ -106,8 +106,11 @@ header{
 }
 
 .hero-img{
-    display:none;
     top:0px
+}
+
+video{
+    display:none
 }
 
 .cta-button{
@@ -336,12 +339,12 @@ footer{
 /*Media Queries*/
 
 
-@media (max-width: 990px){
+@media (min-width: 990px){
     video{
-        display:none;
+        display:inline-block;
     }
     .hero-img{
-        display:inline-block;
+        display:none;
     }
 }
 

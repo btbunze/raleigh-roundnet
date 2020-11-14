@@ -60,12 +60,12 @@ const Header = ({ siteTitle }) => {
         <div className = "header-image" style = {{width: `4rem`, margin: `1rem`, display: `inline-block`}} >
           <Image fileName = "LogoACFS.png"/>
         </div>
-        <h1 className = "page-title" style = {{margin: `0px`, position: `relative`, top: `-.25rem`, display: `inline-block`}}>
+        <h1 className = "page-title" style = {{margin: `0px`, position: `relative`, display: `inline-block`}}>
           <Link
             to="/"
             className = "header-title"
           >
-            {isLarge ? (<span style = {{margin:0}}>Raleigh <br className = "break"></br>Roundnet</span>):(<span>Raleigh Roundnet</span>) }
+            {isLarge ? (<span style = {{margin:0}}>Raleigh <br className = "break"></br>Roundnet</span>):(<span style = {{margin:0}}>Raleigh Roundnet</span>) }
 
           </Link>
         </h1>
