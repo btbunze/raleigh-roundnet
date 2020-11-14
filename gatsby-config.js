@@ -1,3 +1,6 @@
+require("dotenv").config();
+
+
 module.exports = {
   siteMetadata: {
     title: `Raleigh Roudnet`,
@@ -31,7 +34,7 @@ module.exports = {
       resolve: 'gatsby-source-contentful',
       options: {
         spaceId: '0euesmkkwn3o',
-        accessToken: 'rbU8YNLB2UMjSMutfAObSYtzwxfp1nkqqkuHrcCDeDE'
+        accessToken: process.env.ACCESS_TOKEN
       }
     }
     // this (optional) plugin enables Progressive Web App + Offline functionality

@@ -6,7 +6,7 @@ import Image from "../components/image"
 import SEO from "../components/seo"
 
 import ballThrowVideo from "../images/ball-throw.mp4"
-import ballThrowImg from "../images/static-ball-throw.jpg"
+import ballThrowImg from "../images/ball-throw-img.jpg"
 
 const IndexPage = () => {
   
