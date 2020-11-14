@@ -6,6 +6,7 @@ import Image from "../components/image"
 import SEO from "../components/seo"
 
 import ballThrowVideo from "../images/ball-throw.mp4"
+import ballThrowImg from "../images/static-ball-throw.jpg"
 
 const IndexPage = () => {
   
@@ -22,6 +23,7 @@ const IndexPage = () => {
         >
           <source src = {ballThrowVideo} type = "video/mp4" />
       </video>
+      <img src = {ballThrowImg} className = "hero-img" style = {{position:'absolute', zIndex:'-1'}}></img>
       <div className = "content">
         <h1 className = "hero-header">WELCOME TO RALEIGH ROUNDNET</h1>
         <Link className = "cta-button" to = "/events" style = {{textDecoration: "none"}}>
@@ -33,12 +35,12 @@ const IndexPage = () => {
     <div className = "section">
       <div className = "content">
         <h2 className = "section-header">This Month's Tournament</h2>
-        <div style = {{display:'block', textAlign:'center', marginTop: '-3.3rem', marginBottom: `2rem`, position: 'relative', zIndex: '-1'}}>
+        {/*<div style = {{display:'block', textAlign:'center', marginTop: '-3.3rem', marginBottom: `2rem`, position: 'relative', zIndex: '-1'}}>
           <svg width="415px" height="12px" viewBox="0 0 415 12" xmlns="http://www.w3.org/2000/svg">
             <polygon points="22,0  405, 0  395, 12  12, 12"
                     style={{fill: 'rgba(243, 135, 32,.6)'}}/>
           </svg>
-        </div>
+        </div>*/}
           <div className = "tournament-info">
             <div className = "grid-item-sm" style = {{position: 'relative'}}>
               <div style = {{width:'90%', paddingTop:'90%',backgroundColor: 'black'}}></div>

@@ -28,15 +28,17 @@ const Header = ({ siteTitle }) => {
       if ((document.body.scrollTop > 48 || document.documentElement.scrollTop > 48) && window.innerWidth > 840) {
         header.style.height = "3rem";
         navButtons.forEach((elt) => {elt.style.height = "3rem"})
-        headerImg.style.width = "2rem";
-        headerImg.style.margin = ".5rem"
+        //headerImg.style.width = "2rem";
+        //headerImg.style.margin = ".5rem"
+        headerImg.style.display = "none"
         pageTitle.style.display = "none"
         if(isLarge){setIsLarge(false)}
       } else {
         header.style.height = "6rem";
         navButtons.forEach((elt) => {elt.style.height = "6rem"})
-        headerImg.style.width = "4rem";
-        headerImg.style.margin = "1rem"
+        //headerImg.style.width = "4rem";
+        //headerImg.style.margin = "1rem"
+        headerImg.style.display = "inline-block"
         pageTitle.style.display = "inline-block"
         if(!isLarge){setIsLarge(true)}
       }
@@ -56,14 +58,14 @@ const Header = ({ siteTitle }) => {
       <div className = "content">
       <div style = {{display:`inline-block`}}>
         <div className = "header-image" style = {{width: `4rem`, margin: `1rem`, display: `inline-block`}} >
-          <Image/>
+          <Image fileName = "LogoACFS.png"/>
         </div>
         <h1 className = "page-title" style = {{margin: `0px`, position: `relative`, top: `-.25rem`, display: `inline-block`}}>
           <Link
             to="/"
             className = "header-title"
           >
-            {isLarge ? (<span>Raleigh <br className = "break"></br>Roundnet</span>):(<span>Raleigh Roundnet</span>) }
+            {isLarge ? (<span style = {{margin:0}}>Raleigh <br className = "break"></br>Roundnet</span>):(<span>Raleigh Roundnet</span>) }
 
           </Link>
         </h1>

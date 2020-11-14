@@ -18,6 +18,7 @@ header{
     text-decoration: none;
     font-size: 2rem;
     line-height: 2rem;
+    margin:0px;
 }
 
 #largeNav{
@@ -104,6 +105,11 @@ header{
 
 }
 
+.hero-img{
+    display:none;
+    top:0px
+}
+
 .cta-button{
     display: block;
     border:none;
@@ -140,8 +146,12 @@ header{
 
 .section-header{
     text-align:center;
-    font-size:2rem;
-    margin-bottom:2.5rem;
+    font-size:2.25rem;
+    margin-bottom:2rem;
+    font-weight: 400;
+    color:black;
+    border-bottom: 1px solid black;
+    padding-bottom:1rem;
 }
 
 .underline{
@@ -203,7 +213,8 @@ p{
 }
 
 .tournament-list-item{
-    padding-bottom:3rem;
+    padding-bottom:2rem;
+    margin-bottom:2rem
 }
 
 .tournament-list-item::after{
@@ -264,7 +275,7 @@ p{
 /*footer*/
 
 footer{
-    height:10rem;
+    height:8rem;
     width:100%;
     margin-top:-50px;
     background-color:black;
@@ -272,7 +283,7 @@ footer{
 
 .coming-soon-text{
     text-align:center;
-    padding-top:3rem;
+    padding:1rem;
     font-size:2rem;
     font-style: italic;
     opacity:.54;
@@ -323,6 +334,39 @@ footer{
 
 
 /*Media Queries*/
+
+
+@media (max-width: 990px){
+    video{
+        display:none;
+    }
+    .hero-img{
+        display:inline-block;
+    }
+}
+
+@media (max-width:930px){
+    .three-section-display{
+        grid-template-columns: 1fr;
+        grid-gap:50px;
+    }
+    .display-item{
+        width:300px;
+        justify-self: center;
+    }
+}
+
+@media (max-width: 912px){
+    .hero-header{
+        font-size:2.5rem;
+        padding: 5rem 0rem;
+    }
+    .hero{
+        padding-bottom:5.5rem;
+    }
+}
+
+
 @media (max-width: 840px){
     #largeNav{
       display: none;
@@ -355,11 +399,64 @@ footer{
     .two-column{
         display:grid;
         grid-template-columns: 1fr;
-        grid-template-rows:1fr 1fr; 
     }
 
     .swap-order-on-mobile{
         order: -1;
     }
 
-  }
+    .column{
+        max-width:100%;
+        height:fit-content;
+    }
+
+}
+
+@media(max-width: 764px){
+    .hero-header{
+        font-size:2rem;
+        padding: 4rem 0rem;
+    }
+
+    .hero{
+        padding-bottom:4.5rem;
+    }
+    .hero-img{
+        top:20px;
+    }
+}
+
+@media(max-width: 613px){
+    .hero-header{
+        padding: 3rem 0rem;
+    }
+    .hero{
+        padding-bottom: 3.5rem;
+    }
+    .hero-img{
+        top:6rem;
+    }
+}
+
+@media(max-width: 500px){
+    .cta-button{
+        width:14rem;
+        height:3.5rem;
+        font-size:1.25rem;
+    }
+}
+
+
+@media(max-width: 440px){
+    .hero-header{
+        padding: 2rem 0rem;
+    }
+    .hero{
+        padding-bottom:2.5rem;
+    }
+
+    .ti-button {
+        width: 100%;
+        margin-bottom: .5rem;
+    }
+}
