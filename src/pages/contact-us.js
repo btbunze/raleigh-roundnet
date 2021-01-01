@@ -29,8 +29,8 @@ const ContactPage = () => {
           <div className = "column" style = {{width:"90%", margin:"0 auto"}}>
             <h3 className = "ti-header">Get in Touch!</h3>
             <p>Got a question about the club? Want more information about events? Just want to say hi? Come check us out on social media or contact us by email or text!</p>
-            <p>☎: 919-884-6799</p>
-            <p><b>✉</b>: RaleighRoundnetClub@gmail.com</p>
+            <p>919-884-6799</p>
+            <p>RaleighRoundnetClub@gmail.com</p>
             <br/>
             <div>
               <img src = {fbLogo} style = {{width:"25%"}}></img>
