@@ -48,18 +48,12 @@ const Header = ({ siteTitle }) => {
   
   return (
     <>
-    <header
-        style={{
-          background: `rgba(203, 214, 224,80)`,
-          height: `6rem`,
-          
-        }}
-      >
+    <header>
       <div className = "content" style = {{display:'flex', justifyContent: 'space-Between'}}>
       <div style = {{display:`inline-block`}}>
-        <div className = "header-image" style = {{width: `4rem`, margin: `1rem`, display: `inline-block`}} >
+        <Link to = "/" className = "header-image" style = {{width: `4rem`, margin: `1rem`, display: `inline-block`}} >
           <Image fileName = "LogoACFS.png"/>
-        </div>
+        </Link>
         <h1 className = "page-title" style = {{margin: `0px`, position: `relative`, display: `inline-block`}}>
           <Link
             to="/"
@@ -86,9 +80,14 @@ const Header = ({ siteTitle }) => {
               About
             </span>
         </Link>
-        <Link to = "/contact-us" className = "nav-button">
+        <Link to = "/media" className = "nav-button">
             <span className = "nav-text">
-              Contact Us
+              Media
+            </span>
+        </Link>
+        <Link to = "https://66roundnet.com/collections/raleigh-roundnet?page=1" className = "nav-button">
+            <span className = "nav-text">
+              Merch
             </span>
         </Link>
       </nav>
@@ -103,7 +102,8 @@ const Header = ({ siteTitle }) => {
             <div className = "drop-down">
                 <Link to = {'/events'} className = "dd-item" style = {{textDecoration:"none", top: "6rem"}} onClick = {toggleNav}>Events</Link>
                 <Link to = {'/about'} className = "dd-item" style = {{textDecoration:"none", top: "9rem"}} onClick = {toggleNav}>About</Link>
-                <Link to = {'/contact-us'} className = "dd-item" style = {{textDecoration:"none", top: "12rem"}} onClick = {toggleNav}>Contact Us</Link>
+                <Link to = {'/media'} className = "dd-item" style = {{textDecoration:"none", top: "12rem"}} onClick = {toggleNav}>Media</Link>
+                <Link to = {'https://66roundnet.com/collections/raleigh-roundnet?page=1'} className = "dd-item" style = {{textDecoration:"none", top: "15rem"}} onClick = {toggleNav}>Merch</Link>
             </div> : null}
     </>
   )

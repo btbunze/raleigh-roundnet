@@ -70,7 +70,7 @@ const EventsPage = ({data}) => (
     <div style = {{width:"100%", height: "2rem", backgroundColor: "#CBD6E0"}}></div>
 
     <div className = "section">
-      <div className = "content" style = {{paddingTop: "3rem"}}>
+      <div className = "content" style = {{paddingTop: "3rem", paddingBottom: '1rem'}}>
         <h2 className = "section-header">Past Events</h2>
         {/*<div style = {{display:'block', textAlign:'center', marginTop: '-3.3rem', marginBottom: `2rem`, position: 'relative', zIndex: '-1'}}>
           <svg width="205px" height="12px" viewBox="0 0 205 12" xmlns="http://www.w3.org/2000/svg">
