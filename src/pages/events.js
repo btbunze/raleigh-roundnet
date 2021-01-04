@@ -27,7 +27,18 @@ export const query = graphql`{
 
 
 
-const EventsPage = ({data}) => (
+const EventsPage = ({data}) => {
+  
+  const tournaments = data.tournaments.nodes;
+  const upcomingTournaments = tournaments.filter((tournament) => {
+    let tourneyDate = tournament.date.substring(0,10)
+    let todayDate = new Date;
+    todayDate = todayDate.toISOString().substring(0,10)
+    return todayDate < tourneyDate;
+  });
+  const pastTournaments = tournaments.filter((tournament) => !upcomingTournaments.includes(tournament))
+
+  return (
   <Layout>
     <SEO title="Events" />
     <div className = "section" style = {{marginTop: "6rem"}}>
@@ -40,7 +51,7 @@ const EventsPage = ({data}) => (
           </svg>
         </div>*/}
 
-          {data.tournaments.nodes.map((tournament) => (
+          {upcomingTournaments.map((tournament) => (
             <div className = "tournament-info tournament-list-item">
               <div className = "grid-item-sm" style = {{position: 'relative'}}>
                 <div style = {{width:'90%', backgroundColor: 'white'}}>
@@ -51,9 +62,9 @@ const EventsPage = ({data}) => (
               <div className = "grid-item-lg">
                 <h3 className = "ti-header">{tournament.tournamentName}</h3>
                 <h4 className = "ti-subheader">{tournament.date.substring(0,10)}</h4>
-                <p>A description of the tournament, including information about location, prizes, and anything else that might be important for someone looking to sign up to know. I imagine this will take up 4 or 5 lines, so I’m going to type enough placeholder text here to make that a reality. blah blah blah blah blah blah blah blah blah.</p>
-                <button className = "ti-button">Register</button>
-                <button className = "ti-button">Find A Partner</button>
+                <p>{tournament.description.description}</p>
+                <a href = {tournament.registrationLink}><button className = "ti-button">Register</button></a>
+                <a href = {tournament.spikehubLink}><button className = "ti-button">Find A Partner</button></a>
               </div>
             </div>
           ))}
@@ -78,23 +89,25 @@ const EventsPage = ({data}) => (
                     style={{fill: 'rgba(243, 135, 32,.6)'}}/>
           </svg>
         </div>*/}
-        <div className = "tournament-info tournament-list-item">
-            <div className = "grid-item-sm" style = {{position: 'relative'}}>
-              <div style = {{width:'90%', paddingTop:'90%',backgroundColor: 'black'}}></div>
-              <div style = {{width:'90%', paddingTop:'90%',backgroundColor: '#F38720', position: 'absolute', top: '.5rem', left: '.5rem', zIndex: -1}}></div>
-
+        {pastTournaments.map((tournament) => (
+            <div className = "tournament-info tournament-list-item">
+              <div className = "grid-item-sm" style = {{position: 'relative'}}>
+                <div style = {{width:'90%', backgroundColor: 'white'}}>
+                  <img src = {tournament.picture.fluid.src}></img>
+                </div>
+                {/*<div style = {{width:'90%', paddingTop:'90%',backgroundColor: '#F38720', position: 'absolute', top: '.5rem', left: '.5rem', zIndex: -1}}></div>*/}
+              </div>
+              <div className = "grid-item-lg">
+                <h3 className = "ti-header">{tournament.tournamentName}</h3>
+                <h4 className = "ti-subheader">{tournament.date.substring(0,10)}</h4>
+                <p>{tournament.description.description}</p>
+                <button className = "ti-button">See Results</button>
+              </div>
             </div>
-            <div className = "grid-item-lg">
-              <h3 className = "ti-header">Raleigh Roundnet September Tournament</h3>
-              <h4 className = "ti-subheader">September 12, 2020</h4>
-              <p>A description of the tournament, including information about location, prizes, and anything else that might be important for someone looking to sign up to know. I imagine this will take up 4 or 5 lines, so I’m going to type enough placeholder text here to make that a reality. blah blah blah blah blah blah blah blah blah.</p>
-              <button className = "ti-button">See Results</button>
-            </div>
-          </div> 
-
+          ))}
       </div>
     </div>
   </Layout>
-)
+)}
 
 export default EventsPage

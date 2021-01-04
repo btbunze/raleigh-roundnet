@@ -9,7 +9,7 @@ import groupPic from "../images/group-pic.jpg"
 
 import fbLogo from "../images/fb-logo.png"
 import igLogo from "../images/insta-logo.png"
-import twLogo from "../images/twitter-logo.png"
+import ytLogo from "../images/youtube-logo.png"
 
 const AboutPage = () => {
   let submit = (e) => {
@@ -67,11 +67,10 @@ const AboutPage = () => {
             <p>Got a question about the club? Want more information about events? Just want to say hi? Come check us out on social media or contact us by email or text!</p>
             <p>919-884-6799</p>
             <p>RaleighRoundnetClub@gmail.com</p>
-            <br/>
             <div>
-              <img src = {fbLogo} style = {{width:"25%"}}></img>
-              <img src = {igLogo} style = {{width:"25%"}}></img>
-              <img src = {twLogo} style = {{width:"24%"}}></img>
+              <a href = "https://www.facebook.com/Raleigh-Roundnet-Club-100212494680090/"><img src = {fbLogo} style = {{width:"10%"}}></img></a>
+              <a href = "https://www.instagram.com/raleigh_roundnet/"><img src = {igLogo} style = {{width:"10%"}}></img></a>
+              <a href = "https://www.youtube.com/channel/UCqh4UDgu6Sxm8fxW3mFEu1g"><img src = {ytLogo} style = {{width:"9%", marginBottom:'1.5rem', marginLeft: '.15rem'}}></img></a>
             </div>
 
           </div>
