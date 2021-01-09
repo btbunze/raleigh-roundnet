@@ -5,6 +5,8 @@ import SEO from "../components/seo"
 import calendarIcon from "../images/calendar_today-black-18dp.svg"
 import {graphql} from 'gatsby'
 
+import Results from '../components/results'
+
 
 export const query = graphql`{
   tournaments: allContentfulTournament {
@@ -20,6 +22,17 @@ export const query = graphql`{
         fluid {
           src
         }
+      },
+      results {
+        division
+        podiumPic {
+          fluid {
+            src
+          }
+        }
+        secondPlace
+        thirdPlace
+        firstPlace
       }
     }
   }
@@ -101,7 +114,7 @@ const EventsPage = ({data}) => {
                 <h3 className = "ti-header">{tournament.tournamentName}</h3>
                 <h4 className = "ti-subheader">{tournament.date.substring(0,10)}</h4>
                 <p>{tournament.description.description}</p>
-                <button className = "ti-button">See Results</button>
+                <Results results = {tournament.results}/>
               </div>
             </div>
           ))}

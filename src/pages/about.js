@@ -32,7 +32,7 @@ const AboutPage = () => {
           <div className = "column about-column">
             <p className = "about-text"><strong>Welcome to Raleigh Roundnet,</strong> home of the highest payouts of any independent tournaments! We are located in Raleigh, North Carolina, and our goal is simply to spread our love of the sport and the community. We love introducing new players to the sport and seeing people “catch the bug” of Spikeball.</p>
           </div>
-          <div className = "column about-column">
+          <div className = "column about-column" style = {{order:'-1'}}>
             <div style = {{width:"90%", margin:'auto'}}>
             <img src = {groupPic}></img>
             {/*<div style = {{width:'calc(100% - 1rem)', height: 'calc(100%-1rem)', backgroundColor: '#F38720', position: 'absolute', top: '2rem', left: '2rem', zIndex: -1}}></div>*/}
@@ -43,7 +43,7 @@ const AboutPage = () => {
           <div className = "column about-column">
           <p className = "about-text">Raleigh Roundnet is the largest and fastest-growing roundnet club in North Carolina! Members of the club play pickup games every week, and we host regular and coed tournaments <b>every month</b>! Our tourneys attract players of all skill levels from all over the country! You can sign up for upcoming tournaments through the Events page.</p>
           </div>
-          <div className = "column about-column">
+          <div className = "column about-column" style = {{order:'-1'}}>
             <div style = {{width:'90%', margin:'auto'}}>
               <img src = {girlWithBall}></img>
             </div>

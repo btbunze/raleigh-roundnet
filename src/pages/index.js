@@ -4,7 +4,7 @@ import { Link } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 
-import ballThrowVideo from "../images/ball-throw.mp4"
+import ballThrowVideo from "../images/IMG_0141.mp4"
 import ballThrowImg from "../images/ball-throw-img.jpg"
 
 
@@ -33,7 +33,7 @@ const IndexPage = ({data}) => {
   return (
   <Layout>
     <SEO title="Home" />
-      <div className = "section hero" style = {{paddingTop: `6rem`, backgroundColor: "rgba(0, 0, 0,.5)", overflow:"hidden"}}>
+      <div className = "section hero" style = {{paddingTop: `6rem`, backgroundColor: "rgba(51,51,51,.4)", overflow:"hidden"}}>
         <video
             autoPlay
             muted
