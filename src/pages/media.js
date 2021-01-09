@@ -25,16 +25,15 @@ export const query = graphql`{
 const MediaPage = ({data}) => {
 
     const imgArray = data.pictures.nodes;
-    console.log(imgArray)
     const vidArray = data.videos.nodes;
 
-    const [isWindowLarge, setIsWindowLarge] = useState(window.innerWidth >= 550)
+    /*const [isWindowLarge, setIsWindowLarge] = useState(window.innerWidth >= 550)
     window.addEventListener('resize', () => {
         console.log(window.innerWidth)
         if(isWindowLarge != window.innerWidth >= 550) {
             setIsWindowLarge(!isWindowLarge);
         }
-    })
+    })*/
     /*const [numImages, setNumImages] = useState(3)
 
     const showMore = () =>{
@@ -47,7 +46,6 @@ const MediaPage = ({data}) => {
 
     const getVidIds = (arr) => {
         return arr.map((vid) => {
-            console.log(vid?.link.split("="))
             return vid?.link.split("=")[1].split("&")[0];
         })
     }
@@ -73,13 +71,19 @@ const MediaPage = ({data}) => {
                     {/* imgArray.length > 3 ? (<button onClick = {showMore} className = "di-button" id = "showMoreImagesButton" style = {{display: 'block', margin:'.5rem auto',}}> See More</button>) : null*/}
                 </div>
                 <div className = 'content' style = {{paddingTop: '3rem'}}>
-                    <h2 className = "section-header">Video Links</h2>
+                    <h2 className = "section-header">Youtube Videos</h2>
                         <div style = {{textAlign: 'center', marginBottom:'5rem'}}>
-                            {getVidIds(vidArray).map((vid) => 
+                            {getVidIds(vidArray).map((vid) => (
+                                <div className = "iframe-container">
+                                    <iframe className = "iframe" style = {{margin:'1rem' }} src= {`https://www.youtube.com/embed/${vid}`} frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
+                                </div>
+                                )
+                            )}   
+                            {/*getVidIds(vidArray).map((vid) => 
                                 isWindowLarge ? 
                                 (<iframe style = {{margin:'1rem' }} width = "460" height = "259" src= {`https://www.youtube.com/embed/${vid}`} frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>)
                                 :
-                                (<iframe style = {{margin:'1rem 0rem' }} width = "320" height = "180" src= {`https://www.youtube.com/embed/${vid}`} frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>))}
+                            (<iframe style = {{margin:'1rem 0rem' }} width = "320" height = "180" src= {`https://www.youtube.com/embed/${vid}`} frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>))*/}
                         </div>
                 </div>
             </section>

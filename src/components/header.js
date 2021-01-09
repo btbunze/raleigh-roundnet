@@ -16,8 +16,6 @@ const Header = ({ siteTitle }) => {
     setIsNavOpen(!isNavOpen);
   }
 
-  console.log(isLarge)
-
   useEffect(() => {
     window.addEventListener("scroll", () => {
       const header = document.querySelector('header');
