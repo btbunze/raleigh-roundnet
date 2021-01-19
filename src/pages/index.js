@@ -63,13 +63,13 @@ const IndexPage = ({data}) => {
             <div className = "tournament-info">
               <div className = "grid-item-sm" style = {{position: 'relative'}}>
                 <div style = {{width:'90%', backgroundColor: 'white'}}>
-                  <img src = {featuredTournament.picture.fluid.src}></img>
+                  <img src = {featuredTournament.picture ? featuredTournament.picture.fluid.src : null}></img>
                 </div>
               </div>
               <div className = "grid-item-lg">
                 <h3 className = "ti-header">{featuredTournament.tournamentName}</h3>
                 <h4 className = "ti-subheader">{featuredTournament.date.substring(0,10)}</h4>
-                <p>{featuredTournament.description.description}</p>
+                <p style = {{whiteSpace: 'pre-wrap'}}>{featuredTournament.description.description}</p>
                 <a href = {featuredTournament.registrationLink}><button className = "ti-button">Register</button></a>
                 <a href = {featuredTournament.spikehubLink}><button className = "ti-button">Find A Partner</button></a>
               </div>
