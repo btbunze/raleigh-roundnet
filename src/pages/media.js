@@ -60,7 +60,7 @@ const MediaPage = ({data}) => {
                         {imgArray.map((pic) => (
                             <a className = "gp-link" href = {pic.albumLink} style = {{textDecoration: 'none'}}>
                                 <div style = {{backgroundColor:'var(--light-gray)', width:'100%'}}> 
-                                    <img src = {pic.picture.fluid.src} style = {{width:'100%', height:'100%', objectFit: 'cover', margin:'auto'}}></img>
+                                    <img src = {pic.picture ? pic.picture.fluid.src : null} style = {{width:'100%', height:'100%', objectFit: 'cover', margin:'auto'}}></img>
                                 </div>
                                 <div className = "gp-label">
                                     {pic.albumName}
