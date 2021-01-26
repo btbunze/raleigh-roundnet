@@ -55,7 +55,6 @@ const EventsPage = ({data}) => {
   });
   const pastTournaments = tournaments.filter((tournament) => !upcomingTournaments.includes(tournament))
 
-
   return (
   <Layout>
     <SEO title="Events" />
@@ -73,14 +72,14 @@ const EventsPage = ({data}) => {
             <div className = "tournament-info tournament-list-item">
               <div className = "grid-item-sm" style = {{position: 'relative'}}>
                 <div style = {{width:'90%', backgroundColor: 'white'}}>
-                  <img src = {tournament.picture ? tournament.picture.fluid.src : null}></img>
+                  <img src = {tournament.picture.fluid.src}></img>
                 </div>
                 {/*<div style = {{width:'90%', paddingTop:'90%',backgroundColor: '#F38720', position: 'absolute', top: '.5rem', left: '.5rem', zIndex: -1}}></div>*/}
               </div>
               <div className = "grid-item-lg">
                 <h3 className = "ti-header">{tournament.tournamentName}</h3>
                 <h4 className = "ti-subheader">{tournament.date ? tournament.date.substring(0,10) : null}</h4>
-                <p style = {{whiteSpace: 'pre-wrap'}}>{tournament.description.description}</p>
+                <p>{tournament.description.description}</p>
                 <a href = {tournament.registrationLink}><button className = "ti-button">Register</button></a>
                 <a href = {tournament.spikehubLink}><button className = "ti-button">Find A Partner</button></a>
               </div>
@@ -111,14 +110,14 @@ const EventsPage = ({data}) => {
             <div className = "tournament-info tournament-list-item">
               <div className = "grid-item-sm" style = {{position: 'relative'}}>
                 <div style = {{width:'90%', backgroundColor: 'white'}}>
-                  <img src = {tournament.picture ? tournament.picture.fluid.src : null}></img>
+                  <img src = {tournament.picture.fluid.src}></img>
                 </div>
                 {/*<div style = {{width:'90%', paddingTop:'90%',backgroundColor: '#F38720', position: 'absolute', top: '.5rem', left: '.5rem', zIndex: -1}}></div>*/}
               </div>
               <div className = "grid-item-lg">
                 <h3 className = "ti-header">{tournament.tournamentName}</h3>
-                <h4 className = "ti-subheader">{tournament.date ? tournament.date.substring(0,10): null}</h4>
-                <p style = {{whiteSpace: 'pre-wrap'}}>{tournament.description.description}</p>
+                <h4 className = "ti-subheader">{tournament.date ? tournament.date.substring(0,10) : null}</h4>
+                <p>{tournament.description.description}</p>
                 <Results results = {tournament.results}/>
               </div>
             </div>
