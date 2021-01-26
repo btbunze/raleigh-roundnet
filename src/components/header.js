@@ -48,16 +48,16 @@ const Header = ({ siteTitle }) => {
     <>
     <header>
       <div className = "content" style = {{display:'flex', justifyContent: 'space-Between'}}>
-      <div style = {{display:`inline-block`}}>
+      <div style = {{display:`inline-flex`}}>
         <Link to = "/" className = "header-image" style = {{width: `4rem`, margin: `1rem`, display: `inline-block`}} >
           <Image fileName = "LogoACFS.png"/>
         </Link>
-        <h1 className = "page-title" style = {{margin: `0px`, position: `relative`, display: `inline-block`}}>
+        <h1 className = "page-title" style = {{margin: `auto`, paddingBottom: '.45rem', position: `relative`, display: `inline-block`}}>
           <Link
             to="/"
             className = "header-title"
           >
-            {isLarge ? (<span style = {{margin:0}}>Raleigh <br className = "break"></br>Roundnet</span>):(<span style = {{margin:0}}>Raleigh Roundnet</span>) }
+            {isLarge ? (<span style = {{margin:0, margin:'auto'}}>Raleigh {/*<br className = "break"></br>*/}Roundnet</span>):(<span style = {{margin:0}}>Raleigh Roundnet</span>) }
 
           </Link>
         </h1>
